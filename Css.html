@@ -1,72 +1,31 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fff;
-  color: #000;
-}
-
-header {
+/* Warna pilihan bulatan */
+.colors {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  border-bottom: 1px solid #ccc;
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.cart {
-  font-size: 22px;
+.color {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
-main {
-  padding: 30px;
-  text-align: center;
+.color:hover {
+  transform: scale(1.1);
+  border: 2px solid #333;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.product-card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.product-card img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: contain;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #0071e3;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #005bb5;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 14px;
-  border-top: 1px solid #eee;
-  text-align: center;
-}
+/* Definisi warna */
+.black { background: #000; }
+.white { background: #fff; border: 2px solid #999; }
+.steelgrey, .grey { background: #7a7a7a; }
+.green { background: #3aa757; }
+.purple { background: #a020f0; }
+.lightblue, .blue { background: #6ec1e4; }
+.gold, .lightgold { background: #d4af37; }
+.darkblue { background: #001f5c; }
+.orange { background: #ff6600; }

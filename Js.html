@@ -1,3 +1,28 @@
-// Untuk halaman index belum banyak interaksi
-// Script ini bisa dipakai di halaman detail produk nanti
-console.log("Store loaded...");
+document.addEventListener("DOMContentLoaded", () => {
+  const storage = document.getElementById("storage");
+  const price = document.getElementById("price");
+  const colors = document.querySelectorAll(".color");
+
+  // Harga dasar produk (ganti manual per halaman)
+  let basePrice = 20000000; // default contoh Air
+  if (document.title.includes("Pro Max")) basePrice = 28000000;
+  else if (document.title.includes("Pro")) basePrice = 25000000;
+  else if (document.title.includes("Basic")) basePrice = 18000000;
+
+  // Update harga saat pilih storage
+  storage.addEventListener("change", () => {
+    let extra = 0;
+    if (storage.value === "512") extra = 2000000;
+    else if (storage.value === "1024") extra = 4000000;
+
+    price.textContent = "Harga: Rp " + (basePrice + extra).toLocaleString("id-ID");
+  });
+
+  // Highlight color saat dipilih
+  colors.forEach(c => {
+    c.addEventListener("click", () => {
+      colors.forEach(clr => clr.style.outline = "none");
+      c.style.outline = "3px solid #333";
+    });
+  });
+});
